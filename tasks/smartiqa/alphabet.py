@@ -21,9 +21,10 @@ class EngAlphabet(Alphabet):
 
     def __init__(self) -> None:
         super().__init__('En', string.ascii_uppercase)
+        # EngAlphabet.__letters_num = super().letters_num()
 
     def is_en_letter(self, letter: str) -> None:
-        # 3. Здесь можно улучшить условие, лучше приведите letter
+        # 2. Здесь можно улучшить условие, лучше приведите letter
         # к верхнему регистру и проверьте только в letters
         if letter in self.letters or letter in self.letters.lower():
             print(f"Letter {letter} - It's English")

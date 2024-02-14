@@ -37,10 +37,7 @@ class Human:
         self.__house = None
 
     def info(self) -> None:
-        print(f'Name: {self.name}'
-              f'\nAge: {self.age}'
-              f'\nMoney: {self.__money}'
-              f'\nHouse: {self.__house}')
+        print(self)
 
     @staticmethod
     def default_info() -> None:
@@ -62,8 +59,18 @@ class Human:
 
         self.__make_deal(house, price)
 
+    def __str__(self) -> str:
+        return (f'Name: {self.name}'
+                f'\nAge: {self.age}'
+                f'\nMoney: {self.__money}'
+                f'\nHouse: {self.__house}')
 
-if __name__ == "__main__":
+
+if __name__ == '__main__':
+    # public
+    # protected _
+    # private __
+
     Human.default_info()
 
     person1 = Human('Dasha', 33)
@@ -71,6 +78,7 @@ if __name__ == "__main__":
 
     my_home = SmallHouse(20000)
     person1.buy_house(my_home, 10)
+
 
     person1.earn_money(50000)
     person1.buy_house(my_home, 10)

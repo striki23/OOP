@@ -26,24 +26,21 @@ class Tomato:
 
 class TomatoBush:
 
-    def __init__(self, nums: int):
-        self.nums = nums
-        self.tomatoes = [Tomato(num) for num in range(0, nums)]
+    def __init__(self, num: int):
+        self.num = num
+        self.tomatoes = [Tomato(index) for index in range(0, num)]
 
     def grow_all(self) -> None:
         for tomato in self.tomatoes:
             tomato.grow()
 
     def all_are_ripe(self) -> bool:
-        if all(tomato.is_ripe() for tomato in self.tomatoes):
-            # Лучше не печатайте лишний текст
-            # print('Все томаты созрели')
+        return all(tomato.is_ripe() for tomato in self.tomatoes)
+        # Лучше не печатайте лишний текст
+        # print('Все томаты созрели')
 
-            # Причина бага находится в методе give_away_all(),
-            # Вы там вызываете if self.all_are_ripe():
-
-            return True
-        return False
+        # Причина бага находится в методе give_away_all(),
+        # Вы там вызываете if self.all_are_ripe():
 
     def give_away_all(self) -> None:
         if self.all_are_ripe():
