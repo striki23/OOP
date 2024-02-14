@@ -34,10 +34,13 @@ class Fraction:
 
     def numerator(self, number=None):
         if number is not None:
-            if self._num < 0:
-                self._num = -number
-            else:
-                self._num = number
+            # if self._num < 0:
+            #     self._num = -number
+            # else:
+            #     self._num = number
+
+            self._num = -number if self._num < 0 else number
+
             self._fraction_reduction()
         return abs(self._num)
 

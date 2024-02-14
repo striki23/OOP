@@ -10,8 +10,8 @@ class Point:
 
     def length(self, point):
         res = round(abs(((
-                    self.x - point.x) ** 2 + (
-                    self.y - point.y) ** 2) ** 0.5), 2
+                                 self.x - point.x) ** 2 + (
+                                 self.y - point.y) ** 2) ** 0.5), 2
                     )
         return res
 
@@ -28,7 +28,14 @@ class PatchedPoint(Point):
             self.x, self.y = args
 
     def __repr__(self):
-        return f'PatchedPoint{self.x, self.y}'
+        return f'PatchedPoint{self}'
 
     def __str__(self):
-        return f'{self.x, self.y}'
+        return f'({self.x}, {self.y})'
+
+
+if __name__ == '__main__':
+    point = PatchedPoint()
+    print(point)
+    point.move(2, -3)
+    print(repr(point))

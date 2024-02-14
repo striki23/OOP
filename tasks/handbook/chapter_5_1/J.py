@@ -1,5 +1,7 @@
 class Stack:
 
+    # TODO: Переделать
+
     lst = []
 
     def push(self, item):

@@ -8,9 +8,9 @@ class Point:
         self.x += a
         self.y += b
 
-    def length(self, point):
-        res = round(abs(((
+    def length(self, point: 'Point'):
+        return round(abs(((
                     self.x - point.x) ** 2 + (
                     self.y - point.y) ** 2) ** 0.5), 2
                     )
-        return res
+
